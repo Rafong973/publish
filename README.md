@@ -1,11 +1,11 @@
-## sasai web 自动发布工具
+## web 自动发布工具
 
 ### 安装
 
 推荐采用全局安装的方式
 
 ```
-npm install @sasaiweb/publish -g
+npm install @rafong/publish -g
 ```
 
 ### 使用
@@ -21,7 +21,7 @@ npm install @sasaiweb/publish -g
 在终端执行命令，根据提示输入对应的参数即可
 
 ```bash
-sasai-publish
+publish
 ```
 
 ##### 自动发布
@@ -30,7 +30,7 @@ sasai-publish
 本工具自带创建配置功能，执行以下命令
 
 ```bash
-sasai-publish init
+publish init
 ```
 
 工具会在项目根目录创建<b>server.config.json</b>
@@ -65,7 +65,7 @@ sasai-publish init
 在配置文件中填写对应的字段，执行命令进行发布。
 
 ```bash
-sasai-publish
+publish
 ```
 
 本工具会检查远程服务器是否有对应的目录，如果没有会自动创建。
