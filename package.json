@@ -1,7 +1,7 @@
 {
   "name": "@rafong/publish",
   "description": "web端项目发布工具",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "private": false,
   "bin": {
     "publish": "./bin/app.js"
