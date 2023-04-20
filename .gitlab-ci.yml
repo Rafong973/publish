@@ -1,0 +1,52 @@
+variables:
+  HOST: '192.168.4.18'
+  ROOT: 'root'
+  PASSWORD: 'xwz)^!@IsWH'
+  NAME: ''
+
+cache:
+  paths:
+    - node_modules # 缓存 node_modules
+stages:
+  - install
+  - build-dev
+  - build-test
+  - deploy
+
+install:
+  stage: install
+  only:
+    - dev #只对 dev/test分支 的改动做处理
+    - test
+  script:
+    - npm config set registry http://registry.npm.taobao.org/
+    - npm install
+    - yum install sshpass
+
+build-dev:
+  stage: build-dev
+  only:
+    - dev
+  script:
+    - npm run build-test
+  artifacts:
+    paths:
+      - dist
+
+build-test:
+  stage: build-test
+  only:
+    - test
+  script:
+    - npm run build-test
+  artifacts:
+    paths:
+      - dist
+
+deploy:
+  stage: deploy
+  only:
+    - dev
+    - test
+  script:
+    - sshpass -p ${PASSWORD} scp -r dist/* ${ROOT}@${HOST}:/app_server/nginx/html/${CI_PROJECT_NAME}-test/

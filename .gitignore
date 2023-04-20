@@ -1,0 +1,4 @@
+bin/
+dist/
+package-lock.json
+server.config.json
