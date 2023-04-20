@@ -10,7 +10,6 @@ npm install @rafong/publish -g
 
 ### 使用
 
-工具默认忽略 node_modules 文件夹
 本工具支持两种发布模式
 
 - 手动发布
@@ -36,6 +35,7 @@ publish init
 工具会在项目根目录创建<b>server.config.json</b>
 
 <b>注意：配置文件每个字段都不可为空，不填写需要删除</b>
+<b>注意：工具默认忽略 node_modules 文件夹</b>
 
 ```javascript
 {
@@ -78,7 +78,7 @@ publish
 npm install
 ```
 
-#### 开发
+#### 作业
 
 安装后运行以下命令进行开发，在<b>src</b>目录下进行开发工作
 
